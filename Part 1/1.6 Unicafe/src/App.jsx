@@ -32,6 +32,8 @@ const App = () => {
     console.log("bad value", newBadClick);
   };
 
+  const all = good + neutral + bad
+
   return (
     <div>
       <h1>give feedback</h1>
@@ -44,6 +46,9 @@ const App = () => {
       <Statistics text="good" value={good} />
       <Statistics text="neutral" value={neutral} />
       <Statistics text="bad" value={bad} />
+      <Statistics text="all" value={all} />
+      <Statistics text="average" value={(good - bad) / (all)} />
+      <Statistics text="positive" value={good / (all) * 100 + " %"} />
     </div>
   );
 };
