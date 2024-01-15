@@ -5,21 +5,38 @@ const Button = (props) => (
 );
 
 const StatisticsLine = (props) => {
-  return <p>{props.text} {props.value}</p>
+  return (
+    <>
+      <td>{props.text}</td>
+      <td>{props.value}</td>
+    </>
+  )
 }
 
 const Statistics = (props) => {
   console.log(props.all)
   if (props.all != 0) {
     return (
-      <div>
-        <StatisticsLine text="good" value={props.good} />
-        <StatisticsLine text="neutral" value={props.neutral} />
-        <StatisticsLine text="bad" value={props.bad} />
-        <StatisticsLine text="all" value={props.all} />
-        <StatisticsLine text="average" value={(props.good - props.bad) / (props.all)} />
-        <StatisticsLine text="positive" value={props.good / (props.all) * 100 + " %"} />
-      </div>
+      <table>
+        <tr>
+          <StatisticsLine text="good" value={props.good} />
+        </tr>
+        <tr>
+          <StatisticsLine text="neutral" value={props.neutral} />
+        </tr>
+        <tr>
+          <StatisticsLine text="bad" value={props.bad} />
+        </tr>
+        <tr>
+          <StatisticsLine text="all" value={props.all} />
+        </tr>
+        <tr>
+          <StatisticsLine text="average" value={(props.good - props.bad) / (props.all)} />
+        </tr>
+        <tr>
+          <StatisticsLine text="positive" value={props.good / (props.all) * 100 + " %"} />
+        </tr>
+      </table>
     )
   }
   return (
