@@ -20,9 +20,11 @@ const App = () => {
 
       <h2>Numbers</h2>
       <div>
-        {persons.map(person =>
-          <li key={person}>{person.name}</li>
-        )}
+        <ul>
+          {persons.map(person =>
+            <li key={person}>{person.name}</li>
+          )}
+        </ul>
       </div>
     </div>
   )
