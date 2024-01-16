@@ -24,7 +24,6 @@ const App = () => {
           <li key={person}>{person.name}</li>
         )}
       </div>
-
     </div>
   )
 }
